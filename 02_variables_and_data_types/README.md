@@ -124,4 +124,77 @@ print(f"You like {food}")
 print(f"You email is: {email}")
 ```
 
-[8:37]
+[8:37]`Hello Bro`, `You like pizza`, `Your email is: Bro123@gimail.com`. So those are strings, it's a series of text.
+
+Okay, then lastly we have booleans. A boolean is either true or false, it's binary. It's kind of like a light switch. A boolean variable can have only one of two states, it's true or false. Typically booleans are used internally within a program. For example, maybe we have a boolean variable named online, if somebody is online, this can be set to true. If they're offline, it could be false, let's set that to true. What if something is for sale? `for_sale`, if it's available we could say true, if not, it's false. It only has two states. Then what about running, is some process running? Running equals true, or false.
+
+```py
+online = True
+for_sale = False
+running = True
+```
+
+Then let's print these. print, what could we say with oline? Are you online? then let's print our variable online. print, Is the item for sale? {for_sale}. print, perhaps running refers to a game, is the game running? Game running, colon space, our runing variable. [Run]
+
+```py
+print(f"Are you online?: {online}")
+print(f"Is the item for sale? {for_sale}")
+print(f"Game running: {running}")
+```
+
+So, `Are you online?: true`, `Is the item for sale?: False`, `Game running: True`.
+
+Typically with booleans, you use these internally. It's not common to print them directly, usually we would use these with if statements. Such as if then the Boolean, if some process is running, print The game is running, else, print, The game is over. I'm just going to turn these into comments. [Run]
+
+```py
+if running:
+    print("The game is running")
+else:
+    print("The game is over")
+```
+
+So if running is true, the game is running. If it's false, you would do something else. The game is over, but I'll discuss this more when we reach if statements, you don't need to know them at this point in time, just understand for now, a boolean is either true or false. Oh, here's another thing, a common mistake that people do with booleans is that they may put them within quotes.
+
+```py
+online = "True"
+```
+
+You can see that the color scheme changed. This is technically a string, it's within quotes. So that's a common mistake that people might make, if you're writing a boolean, make sure it's not within quotes. And the first letter is capital. [Clear_code]
+
+Before I wrap things up, I'm going to show you a few tips and tricks with variables. Suppose we have 3 variables. x equals 1, y equals 2, z equals 3. Then I'll print these variables directly. print(x), print(y), print(z). [Run]. This would result in 1/2/3.
+
+```py
+x = 1
+y = 2
+z = 3
+
+print(x)
+print(y)
+print(z)
+```
+
+Another possibility, in place of assigning these variables on separate lines, you could doe so all on one line. We could write x comma y comma z, equals, one comma two comma three, that would do the same thing, and it only takes one line of code. This is referred to as multiple assignment.
+
+```py
+x, y, z = 1, 2, 3
+
+print(x)
+print(y)
+print(z)
+```
+
+If you ever need to set multiple variables to the same value, this is what you could do. I need to set x, y and z, all to zero, maybe they are coordinates or something. What I would instead type is x equals y, equals z, equals zero or some other value. [run]
+
+```py
+x = y = z = 0
+
+print(x)
+print(y)
+print(z)
+```
+
+So x y and z are all zero. If were to change this number to 1, [Run], well, they all equal one. That's how to set multiple variables to the same value. variable one equals variable two equals, however many more variables you have.
+
+All right everybody, those are variables, variable is a reuseable container for storing a value. A variable behaves as if it were the value it contains. We discussed for data types. Which are whole numbers. Floats, which are numbers that contain a decimal portion. strings, which are a series of text like a name or an email, and booleans which are either true or false. They are binary.
+
+So yeah, that's an introduction to variables in python. In the comments section, why don't you post four variables. An integer, a float, a string and a boolean. Try and think of a unique example that I din't cover alreay. So yeah, those are variables in python.
