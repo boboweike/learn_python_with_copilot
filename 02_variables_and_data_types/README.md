@@ -1,132 +1,130 @@
-Hey, what's going on everybody. In this topic I'm going to explain variables and data types in Python, as well as give you a few useful tips and tricks at the end of this topic. So why don't you sit back, relax, and enjoy the show.
+大家好，欢迎回到Python快速入门课程。今天我们要讲的是Python中的变量和数据类型。在课程结束时，我们还会分享一些实用的小技巧。那么，让我们开始吧
 
-## Variable
+## 变量
 
-- A resuable container for storing a value
-- A variable behaves as if it were the value it contains
+* 一个用来存储数值的可重复使用的容器
+* 变量的行为就像它所包含的值一样
 
-Let's talk about variables. A variable is a reusable container for storing a value, a variable behaves as if it were the value it contains. Think back to algebra class back in the day, we have an equation that contains x, x is some representation of a value wherever we use x, it behaves as if it were a certain number, that's kind of the same thing with programming. Now when we crate a variable, we would like to give a descriptive and unique name of what that variable contains.
+我们先来学习这个变量(variable)。变量是一个可重复使用的容器，用于存储数值。变量的行为就像它所包含的值一样。回想一下我们在代数课上学过的内容，我们有一个包含 x 的方程，x 代表某个值，无论我们在哪里使用 x，它都表现得就像是一个特定的数值。编程中的变量也是类似的。现在，当我们创建一个变量时，我们希望给它一个描述性的、独特的名称，以表示它所包含的内容。
 
-Suppose I'm working with a user's age, I could declare a variable named age. age equals then some value. Let's say my age is 21, not anymore, but I like to think it still is, guys I'm getting old. I can use this variable age and it will behave as if it were the number 21. To print a variable, you can place it within a print statement. pring(age). Run. My age is 21. If you're printing a variable, you don't need to put it within quotes, because what we're doing then is literally printing the word age and not the variable. If you need to display a variable along with some text, such as `You are age years old`, what we could do is string concatenation. Wherever you would like to include a variable, let's say here where ages, we can separate this line of text into different strings. You are, plus age, plus the text years old. [Run].
+假设我要表示某个用户的年龄，我可以声明一个称为`age`的变量。`age`等于某个值，比方说`28`。我使用这个变量`age`，它代表`28`这个值。如果要打印输出一个变量的话，你可以使用`print`语句。`print(age)`，运行。输出年龄是28岁。注意，如果你要输出一个变量的话，你不能把变量名放在引号中，如果放在引号中的话，它表示字符串“age”，而不是变量`age`。如果你想将变量和一些文本一起显示出来，比方说`你的年龄是多少岁`，那么你需要使用字符串拼接(string concatenation)。任何需要引入变量的地方，比方说引入变量age的地方，你可以把字符串和变量拼接起来。你的年龄是，加上变量`age`，再加上字符串`岁`。
 
-```py
-age = 21
+假设我要处理用户的年龄，我可以声明一个名为`age`的变量。`age`等于某个值，比如说`28`。我可以使用这个变量`age`，它会表现得就像是数字`28`一样。要打印输出一个变量，你可以将它放在`print`语句中，比如`print(age)`。运行代码后，输出的结果就是年龄是`28`岁。需要注意的是，如果你要打印输出一个变量，就不要将它放在引号中，因为这样会直接打印出变量名而不是变量的值。如果你想要将变量和一些文本一起显示出来，比如说`你的年龄是多少岁`，你可以使用字符串拼接的方式。在需要引入变量的地方，比如在`age`的位置，你可以将字符串和变量拼接起来，例如`你的年龄是` + `age` + `岁`。下面是一个示例代码：
 
-print("You are " + age + "years old")
-```
-
-So we do have an error here, type error, can only concatenate str (not "int") to str. We can't add numbers to strings directly. We would need to do what is called typecasting. To display a number along with some text, we would need to cast this variable which is a number into text, a string. To do that, we can precede the variable name with `str`, then surround the variable with a set of parentheses. If I were to run this again, this would display `You are21years old`.
-
-```py
-print("You are" + str(age) + "years old")
-```
-
-But you do have to pay attention to your spaces. I'm going to add a space after are, as well as before the word years. Run this again, you are 21 years old.
-
-```py
-print("You are " + str(age) + " years old")
-```
-
-Another way to display a variable along with some text, is to separate the text and variables in two separate arguements. print, then write our text within quotes, You are, whatever you would like to add a variable, add a comma, then the variable name, if you have more text that follows, add another comma, then add some additional text. "You are ", age, " years old".
-
-```py
-print("You are " + str(age) + " years old")
-print("You are ", age, " years old")
-```
-
-So what we've done is separated our strings and variables into different arguments, each separated with a comma, but if you separate your variables and text into separate arguments, you'll include a space automatically. So I'm going to get rid of the space after are and before the word years. [Run].
-
-```py
-print("You are " + str(age) + " years old")
-print("You are", age, "years old")
-```
-
-So spacing is pretty important depending on which method you use, these two print statements will output the same thing, `You are 21 years old`.
-
-The third way to print a variable[3:21] along with some text, and this is becoming the more popular way of doing things is to use what is called an f-string. print, a set of quotes, precede your quotes with f. u r whatever you would like to insert a variable, add a set of curly braces. The curly braces are acting as a placeholder for a value or variable. We will place our variable age within the curly braces. [run]
-
-```py
-print("You are " + str(age) + " years old")
-print("You are", age, "years old")
-print(f"You are {age} years old")
-```
-
-So yeah, those are three different ways to output a variable along with some text. As of the filming of this video, fstrings are becoming much more popular for output. For the rest of the series, we will be using fstrings. But you should still be aware of the existence of these other two methods as well.
-
-I need to discuss different data types, there's four basic data types in Python. There's still more but these are four for beginners.
-
-- INTEGER
-- FLOAT
-- STRING
-- BOOLEAN
-
-We have integers, floats, strings and booleans. Let's begin with integers. We'll create 3 integer variables. For example, we have age, another whole number could be, maybe players, or users. You're are not going to have half a player right? or nine tenths of a player, it's going to be a while number. You have one two three or more players, all whole numbers. Then maybe quantity, maybe somebody is buying something quanity equals five, you wouldn't have like half a product right? It would be a whole number.
 
 ```py
 age = 21
-players = 2
-quanity = 5
+
+print("你的年龄是" + age + "岁")
 ```
 
-Then let's display some of these variables. print, we'll use fstrings, because we like fstrings. You are {age} years old. This is the same from the previous example.
+
+运行程序，结果出现一个运行时错误，类型错误：只能将字符串(str)与字符串相连，而不能将数字(int)与字符串相连。我们需要做类型转型。为了将一个数字和一些文本一起显示，我们需要将这个变量从数字类型转换为文本类型，也就是字符串类型。为了实现这个转换，我们可以在变量名之前加上`str`，然后用一对括号将变量括起来。如果我再次运行这段代码，结果将显示为：`你的年龄是21岁`。
 
 ```py
-print(f"You are {age} years old")
+print("你的年龄是" + str(age) + "岁")
 ```
 
-Let's use players. There are {players}, then the word players online.
+将变量和文本一起显示的另一种方式是将文本和变量作为不同的参数传递给print函数。我们可以这样尝试：使用print函数，将文本用双引号括起来，比如说"你的年龄是"。然后添加一个逗号，接着是变量名age。如果后面还有文本，再加一个逗号，然后再加一些文本。例如"岁"。下面是示例代码：
 
 ```py
-print(f"There are {players} players online")
+print("你的年龄是" + str(age) + "岁")
+print("你的年龄是", age, "岁")
 ```
 
-Then quantity, let's use this, You would like to buy, our variable {quantity} items.
+运行程序，这两个语句的输出分别是:
+* 你的年龄是28岁
+* 你的年龄是 28 岁
+
+需要注意的是，第二种输出方式会自动在数字28的左右添加空格。这在英文输出中是可以接受的，因为英文单词之间本身就带有空格。但是在中文输出中，这样看起来会有点别扭，需要注意一下。
+
+第三种将文本和变量一起输出的方式，也是最流行的一种做法，就是使用所谓的`f`字符串。print，在双引号之前，先添加一个`f`。然后，你的年龄是，加一对花括号，这个花括号用做值或者变量的占位符。在花括号中，我们添加变量`age`。运行，结果也显示：你的年龄是28岁。
+
+```py
+print("你的年龄是" + str(age) + "岁")
+print("你的年龄是", age, "岁")
+print(f"你的年龄是{age}岁")
+```
+
+所以，这就是将变量和文本一起输出的三种方式。在我录制这个视频的时候，f字符串方式正变得越来越流行。在接下来的视频课程中，我们将主要使用`f`字符串方式。但是你也应该知道到还有其它两种方式。
+
+下面我们来学习不同的数据类型。Python当中主要有四种基本数据类型。其实还有其它数据类型，但是对于初学者来说，先学习这四种就可以了。
+
+- 整数(INTEGER)
+- 浮点数(FLOAT)
+- 字符串(STRING)
+- 布尔(BOOLEAN)
+
+Python中有整数（integers），浮点数（floats），字符串（strings）和布尔类型（booleans）。我们先从整数开始。我们来创建3个整数变量。例如，我们有一个年龄（age），另一个整数变量可以是玩家（players）或用户（users）。你不会有半个玩家？或者十分之九个的玩家，对不对？它们都应该是整数。你可能有1/2/3个或更多的玩家，都是整数。然后，可能还有一个数量（quantity），比如有人购买了一定数量的商品，比如数量等于10，你不会购买半个商品对吧？它应该是一个整数。
+
+```py
+age = 28
+players = 3
+quanity = 10
+```
+
+下面我们来显示输出这些变量。print，我们使用f字符串，因为我习惯使用f字符串。你的年龄是{age}岁。这个和之前的例子是一样的。
+
+```py
+print(f"你的年龄是{age}岁")
+```
+再输出players。有{players}个玩家在线。
+
+```py
+print(f"有{players}个玩家在线")
+```
+
+再输出quantity，你购买的商品数量是{quantity}个。
 
 ```py
 print(f"You would like to by {quantity} items")
 ```
 
-Let's run this, `You are 21 years old`. `There are 2 players online`. `You would like to buy 5 items`.
+运行，结果显示：`你的年龄是28岁`，`有3个玩家在线`，`你购买的商品数量是10个`。
 
-So those are integers, they're just whole numbers. I'm going to turn these lines into comments, and then we can continue.
+所以以上展示的就是整数。在继续后面的内容之前，我先把这些给注释掉。
 
-Let's move on to floats. A float is a number that contains a decimal portion. For example, maybe a GPA, that's usually a decimal. my GPA is 3.2. What about a distance? this could be kilometers miles whatever, 2.5 kilometers. Um price, price could be a float. price equals 10.99.
-
-```py
-gpa = 3.2
-distance = 2.5
-price = 10.99
-```
-
-Let's display some of these. print, let's print our gpa, You gpa is {gpa}. Let's print distance, you ran distance then I'll add km for kilometers. print, The price is, I'm going to add a dollar sign, then our placeholder, with price. And that should be good. [Run]
+下面我们来讲浮点数。浮点数表示可以包含小数点的数字。比方说，学生某门课程的成绩grade，可以使用浮点数。比方说，我的成绩是90.5分。还有距离distance，比方说distance是3.2公里。还有价格price，也可以是一个浮点数。比方说price是9.99元。
 
 ```py
-print(f"Your gpa is {gpa}")
-print(f"You ran {distance}Km")
-print(f"The price is ${price}")
+grade = 90.5
+distance = 3.2
+price = 9.99
 ```
 
-`Your gpa is 3.2`. `You ran 2.5Km`. `The price is $10.99`. So those are floats, they're numbers that contain a decimal portion, even if the decimal had point zero. It would still be considered a float. Whereas this(gpa = 3) would be an integer. So those are floats. I'm going to turn these lines into comments, then we can move on.
-
-Now we have strings. A string is just a series of text. For example, maybe a username, name equals type in your first name, it's just a series of characters, those are strings. How about food, what's your favorite food? I like pizza. I'll add that to my variable food. Then what about email? email equals, make up some email, `Bro123@gmail.com`. Now with strings, they can contain numbers, but we treat them differently than integers and floats. Integers and floats we can use with arithmetic equations, here they're more or less just characters. So a string is just a series of characters within quotes, these can be sinple quotes or double quotes.
+我们把这些浮点数变量也打印输出出来。print，我们来输出分数grade。你的分数是{grade}分。再输出距离distance，你跑了{distance}公里。再输出print，价格是，{price}元。这样就可以了，运行。
 
 ```py
-name = "Bro"
-food = "pizza"
-email = "Bro123@gmail.com"
+print(f"你的分数是{gpa}分")
+print(f"你跑了{distance}公里")
+print(f"价格是{price}元")
 ```
 
-Then let's display these for pratice. Let's say: Hello, our variable name. You like, our variable food. Your email is our email variable. [Run]
+结果显示：`你的分数是90.5分`，`你跑了3.2公里`，`价格是9.99元`。 
+
+所以这些就是浮点数，它们是包含小数点的数值。即使一个数字后面跟上点零(比如90.0)，它也被认为是一个浮点数。但是90就是一个整数。好，在继续后面的内容之前，我先把这些行注释掉。好我们继续。
+
+现在我们来讲字符串string。一个字符串就是一个文本序列。比方说，用户名，name是"波波"，这个字符序列就是字符串。再来一个食品food，你喜欢吃什么食品呢？我喜欢吃酸菜鱼，所以food="酸菜鱼"。再来一个例子email，email="bobo@boboweike.cn"。注意，字符串中可以包含数字，比方说`bobo666@boboweike.cn`，这里的数字也是字符串的一部分，不是整数或者浮点数。总之，字符串就是用引号引起来的一个字符序列，引号可以用单引号，也可以用双引号。
 
 ```py
-print(f"Hello {name}")
-print(f"You like {food}")
-print(f"You email is: {email}")
+name = "波波"
+food = "酸菜鱼"
+email = "bobo666@boboweike.cn"
 ```
 
-[8:37]`Hello Bro`, `You like pizza`, `Your email is: Bro123@gimail.com`. So those are strings, it's a series of text.
+我们来把这些字符串变量输出出来。你好{name}!，你喜欢吃{food}，你的邮件地址是：{email}。运行。
 
-Okay, then lastly we have booleans. A boolean is either true or false, it's binary. It's kind of like a light switch. A boolean variable can have only one of two states, it's true or false. Typically booleans are used internally within a program. For example, maybe we have a boolean variable named online, if somebody is online, this can be set to true. If they're offline, it could be false, let's set that to true. What if something is for sale? `for_sale`, if it's available we could say true, if not, it's false. It only has two states. Then what about running, is some process running? Running equals true, or false.
+```py
+print(f"你好{name}！")
+print(f"你喜欢吃{food}")
+print(f"你的邮件地址是：{email}")
+```
+
+结果输出，你好波波！，你喜欢吃酸菜鱼，你的邮件地址是：bobo666@boboweike.cn。
+
+所以这就是字符串，它就是一个文本序列。
+
+好，最后我们来讲布尔变量。一个布尔变量的值要么为真True，要么是假Talse。它是一个二元变量，就像一个灯的开关一样。一个布尔变量只能处在两种状态之一，true或者false。比方说，我们可以定义一个称为`online`的变量，它表示一个用户是否在线，我们把它设置为True。如果用户不在线，我们也可以把它设为False，这边我们把它设为True。如果我们要表示某个商品是否还在售，`for_sale`，如果商品还有货的话，就是`True`，如果没货了，就是`False`。它只有两个状态。再来一个变量`running`，这个进程还在运行吗，运行的话就是`True`，否则就是`False`。
 
 ```py
 online = True
@@ -134,34 +132,37 @@ for_sale = False
 running = True
 ```
 
-Then let's print these. print, what could we say with oline? Are you online? then let's print our variable online. print, Is the item for sale? {for_sale}. print, perhaps running refers to a game, is the game running? Game running, colon space, our runing variable. [Run]
+我们把这些变量也输出出来。print，用户在线吗?: 然后花括号占位符，online。`print`，这个商品还在卖吗?: {for_sale}。print，游戏还在运行吗?: {running}。运行。
 
 ```py
-print(f"Are you online?: {online}")
-print(f"Is the item for sale? {for_sale}")
-print(f"Game running: {running}")
+print(f"用户在线吗?: {online}")
+print(f"这个商品还在卖吗?: {for_sale}")
+print(f"游戏还在运行吗?: {running}")
 ```
 
 So, `Are you online?: true`, `Is the item for sale?: False`, `Game running: True`.
 
-Typically with booleans, you use these internally. It's not common to print them directly, usually we would use these with if statements. Such as if then the Boolean, if some process is running, print The game is running, else, print, The game is over. I'm just going to turn these into comments. [Run]
+结果输出: 用户在线吗?: True。这个商品还在卖吗?: False。游戏还在运行吗?: True。
+
+在程序中，通常我们并不直接输出布尔变量，而是将它用于if逻辑判断，类似if then这种形式。比方说，如果游戏还在运行，那么就输出“游戏正在运行”，否则，输出“游戏结束了”。我把上面的代码先注释掉。运行。
 
 ```py
 if running:
-    print("The game is running")
+    print("游戏正在运行")
 else:
-    print("The game is over")
+    print("游戏结束了")
 ```
 
-So if running is true, the game is running. If it's false, you would do something else. The game is over, but I'll discuss this more when we reach if statements, you don't need to know them at this point in time, just understand for now, a boolean is either true or false. Oh, here's another thing, a common mistake that people do with booleans is that they may put them within quotes.
+所以，如果running是True，那么就显示游戏正在运行。如果它是False，那么就显示游戏结束了。关于if/else语句，我在后续还会详解讲解，现在并不需要理解太多。现在你只需要知道，一个布尔变量的值要么是True，要么是False。
 
 ```py
 online = "True"
 ```
 
-You can see that the color scheme changed. This is technically a string, it's within quotes. So that's a common mistake that people might make, if you're writing a boolean, make sure it's not within quotes. And the first letter is capital. [Clear_code]
+有一点需要提醒一下，新手经常犯的一个错误是把布尔值包在一对引号中。你可以看到IDE的提示色变了，它变成了一个字符串，因为它在引号中。所以注意不要犯类似错误，对于布尔值，一定不要把它们放在双引号中。还有，这个`T`是大写的。我先把上面的内容注释掉，继续下面的内容。
 
-Before I wrap things up, I'm going to show you a few tips and tricks with variables. Suppose we have 3 variables. x equals 1, y equals 2, z equals 3. Then I'll print these variables directly. print(x), print(y), print(z). [Run]. This would result in 1/2/3.
+
+在结束本节课之前，我想分享一些关于变量的小技巧。假定我们有三个变量，x = 1, y = 2, z = 3。我直接输出这些变量，print(x), print(y), print(z)。运行。结果显示1/2/3。
 
 ```py
 x = 1
@@ -173,7 +174,7 @@ print(y)
 print(z)
 ```
 
-Another possibility, in place of assigning these variables on separate lines, you could doe so all on one line. We could write x comma y comma z, equals, one comma two comma three, that would do the same thing, and it only takes one line of code. This is referred to as multiple assignment.
+还有一种方法，可以在一行上同时为这些变量赋值，而不是分开在不同的行上进行赋值。我们可以写成`x, y, z = 1, 2, 3`，这样做的效果是一样的，而且只需要一行代码。这被称为多重赋值。
 
 ```py
 x, y, z = 1, 2, 3
@@ -183,7 +184,7 @@ print(y)
 print(z)
 ```
 
-If you ever need to set multiple variables to the same value, this is what you could do. I need to set x, y and z, all to zero, maybe they are coordinates or something. What I would instead type is x equals y, equals z, equals zero or some other value. [run]
+如果你想把多个变量设为某个相同的值，可以这样写。x = y = z = 0。运行。
 
 ```py
 x = y = z = 0
@@ -193,8 +194,8 @@ print(y)
 print(z)
 ```
 
-So x y and z are all zero. If were to change this number to 1, [Run], well, they all equal one. That's how to set multiple variables to the same value. variable one equals variable two equals, however many more variables you have.
+所以，x/y/z都是零。如果我把这个值设为1，运行，结果都是一。这就是演示了如何将多个变量设为同一个值。变量一等于变量二，不管有多少个变量，都以此类推。
 
-All right everybody, those are variables, variable is a reuseable container for storing a value. A variable behaves as if it were the value it contains. We discussed for data types. Which are whole numbers. Floats, which are numbers that contain a decimal portion. strings, which are a series of text like a name or an email, and booleans which are either true or false. They are binary.
+好的，这就是关于Python变量的内容。变量是一个可重复使用的容器，用于存储数值。变量的行为就像它所包含的值一样。今天我们学习了数据类型，包括整数。浮点数，它是包含小数部分的数字。字符串，它是一个文本序列，比方说姓名，邮件地址等。然后还有布尔变量，它要么是True，要么是False，它是二元的。
 
-So yeah, that's an introduction to variables in python. In the comments section, why don't you post four variables. An integer, a float, a string and a boolean. Try and think of a unique example that I din't cover alreay. So yeah, those are variables in python.
+感谢观看，如果你觉得这节课对你有帮助，别忘了点赞，并且订阅波波微课频道！我们下次课再见！
