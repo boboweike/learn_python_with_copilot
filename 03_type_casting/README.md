@@ -1,31 +1,31 @@
-All right, welcome back everybody. In this topic I'm going to explain type casting. Type casting is the process of converting a value of one data type to another. We can convert integers to floats. Floats to integers, strings to booleans, booleans to strings, floats to strings, strings to integers, integers to booleans. I think you get the idea, why might you want to use typecasting? When we get to the lesson on accepting user input, the user input is always a string. If somebody were to type in a number, and we need to perform math involving that number, we would want to convert it to either an integer or float. Another example is that if we had a floating point number, and we need to round that number to an integer. One possible way is to cast it as an integer. We can truncate the decimal portion.
+欢迎回来，今天我们来学习Python当中的转型(type casting)。转型表示将一个数据类型的值转换成另外一个数据类型的过程。我们可以将整数转成浮点数，浮点数转成整数，字符串转成布尔，布尔转成字符串，字符串转成整数，整数转成布尔。那么我们为什么需要转型呢？在后续的课程中，我们会讲如何获取用户输入，用户输入的总是字符串。如果用户输入的是一个字符串表示的数字，然后我们要对这个数字做数学运算，那么我们就必须先将字符串转成整数或者浮点数。另外一个例子是，如果我们有一个浮点数，我们需要将它四舍五入成一个整数，一种转的方式就是将它转型成整数，我们可以截掉小数部分。
 
-There are two different ways we can do this, explicitly and implicitly.
+转型有两种方式，显式转型和隐式转型。
 
-```py
-# typecasting = The process of converting a value of one data type to another.
-#               (string, integer, float, boolean)
-#               Explicit vs Implicit
-```
+## 转型
 
-Let's cover some explicit type casting. I have four variables. We need a string, let's say name, type in your first name. age, that's good. Float, how about a grade point average? GPA for short. my GPA will be a solid um 1.9, then we'll need a boolean, uh, what about student, are we a student, if we're a student, that would be true, if not, that would be false.
+将一个数据类型的值转换成另外一个数据类型的过程。(字符串/整数/浮点数/布尔)。显式 vs 隐式。
+
+我们先讲显式类型转换。假设我有四个变量。我们需要一个字符串，比方说name，我们的名字是"波波"。我的年龄age是28岁。我的平均学分绩点GPA是3.9分。我是一个学生student = True。
 
 ```py
-name = "Bro"
-age = 21
-gpa = 1.9
+name = "波波"
+age = 28
+gpa = 3.9
 student = True
 ```
 
-Here's four variables of the four basic data types. We have a string, an integer, a float and a boolean.
+这四个变量覆盖了四种基本数据类型。一个字符串，一个整数，一个浮点数和一个布尔类型。
 
-If you ever need a data type of a variable, you can use the built-in type function. type the word type, followed by a set of parentheses. Place a variable within a set of parentheses, `type(name)`, however, when I run this, we can't see anything, so we need to place this stement within a print statement. I'm going to type print, add a set of parentheses. We will cut this line of code, and paste it within the print statement.
+如果你想查看一个变量的数据类型，你可以使用内置的`type`函数。输入`type`，加一对括号，将变量名放在括号中，`type(name)`。现在直接运行的话，控制台没有输出，所以我们还需要加一个print语句。输入`print`，添加一对括号，将上面这句剪切一下，粘贴到这个print语句中。
 
 ```py
 print(type(name))
 ```
 
 So we are printing the type of my variable name, `<class 'str'>` and that is str which means it's a string. Let's do that with age GPA and student, just so you're more familiar with using the type function. We have age, gpa, and student.
+
+所以，我们将变量名`name`的类型打印输出出来了，结果显示`<class 'str'>`，这里的`str`就是字符串类型。我们再输出age/gpa和student的类型，让你进一步体验一下这个`type`函数的用法。
 
 ```py
 print(type(name))
@@ -34,7 +34,7 @@ print(type(gpa))
 print(type(student))
 ```
 
-Here we are, python says the data type of name is a string, str. age is an integer, int means integer. gpa is a float. Then student is bool, which means boolean.
+结果python展示name的类型是`str`字符串，age是`int`整数，gpa是`float`浮点数，student是`bool`，也就是布尔型。
 
 ```py
 <class 'str'>
@@ -43,82 +43,84 @@ Here we are, python says the data type of name is a string, str. age is an integ
 <class 'bool'>
 ```
 
-Let's do some explicit conversion. I need to convert my variable age into a floating point number. I could take my variable age, i could reassign this a value by using equals. Then I will explicitly cast age into a float by typing float, a set of parentheses. add my variable to be typecasted within the set of parentheses. Then let's print whatever age currently is. [Run]
+我们来做一些显式转型。我要将变量`age`转成浮点数。我把变量`age`再次赋值为，通过前置`float`，加一对括号，将原age显式转成一个浮点数。然后我们再输出`age`的当前值。运行。
 
 ```py
 age = float(age)
 print(age)
 ```
 
-Look at that, age is now 21.0. You can tell it's a float, because it has a decimal portion. If I were to use that type function again. We can see what the data type of age is now.
+结果显示，age现在的值是`28.0`。可以认为它是一个浮点数，因为它有一个小数部分。如果我再次使用`type`函数查看`age`的类型，我们可以看到它的当前类型。
 
 ```py
 age = float(age)
 print(type(age))
 ```
 
-And my variable age is a floating point number: `<class 'float'`. That's how to cast a value as a float. You type float, add a set of parentheses. Place your value or variable within that set of parentheses. Then you may need to reassign it to something. Here we're just reassigning our variable age. [clear_2_lines]
+变量`age`的当前类型是浮点数：`<class 'float'>`。这就演示了如何将一个值转型成一个浮点数。输入关键子`float`，加一对括号，将要转的值或者变量放在括号中。然后将结果重新赋值给某个变量。这边我们重新赋值给变量`age`。[clear_2_lines]。
 
-We know how to convert a value to a float, let's try an integer. I'll convert my GPA into an integer. I'll take GPA, set this equal to type int, set of parentheses, place my variable within the parentheses.
+既然我们已经知道如何将值转型成浮点数，下面我们再来尝试转型成整数。我要将`gpa`转成一个整数。我将变量`gpa`，等于赋值为，`int`关键字进行转型，一对括号，将变量`gpa`放在括号中。
 
 ```py
 age = int(gpa)
 print(gpa)
 ```
 
-The I will print whatever my GPA is. my GPA is now 1. So an integer, it's a whole number, we can't contain that decimal portion, so it's truncated. That's how to convert a value into an integer.
+现在我输出gpa的值，它现在的值是`3`。所以它变成了一个整数，原来的小数部分被截掉了。这就是演示了如何将某个值转型成整数。
 
-Let's convert a value into a string. How about this boolean? So student, equals, to convert a value or variable into a string, type `str`, add a set of parentheses. Place your value or variable within that set of parentheses. Then let's print whatever our variable is after we reassign it. [run]
+我们再将一个值转型成一个字符串。比方说，我们可以把这个布尔类型的`student`转成字符串。所以，`student`，等于赋值为，通过关键字`str`进行转型。将要转的值放在括号中。然后，我们再将重新赋值后的`student`打印输出出来。运行。
 
 ```py
 student = str(student)
 print(student)
 ```
 
-So student still says true. It appears the same as it did before, but now it's treated as a series of characters, rather than a boolean. Just to prove to you that student is a string, let's use the type function and surround our student variable when we print it.
+结果输出"True"，看起来和之前一样，但其实它是一个字符串，有引号的，不是布尔值。为了证明它是一个字符串，我们再使用`type`函数，将`student`变量放在括号中，把它的类型输出出来。
 
 ```py
 student = str(strudent)
 print(type(student))
 ```
 
-Student is now a string`<class 'str'>`. So to convert a value or variable into a string. You can use the built-in string function, just type str, set of parentheses, add your value or variable, boom there you go. [clearn_2_lines].
+结果显示`student`现在的类型是`<class 'str'>`，就是字符串。所以，为了将一个值或者变量转成一个字符串，你可以使用内置的`str`函数，加一对括号，将值或者变量添加到这个括号中，这样就可以转型了。[clear_2_lines]。
 
-All right, lastly, we can convert a value or variable into a boolean. So a boolean can only be true or false. What if we were to convert a number into a boolean? What would happen? So let's take age equals to cast the value or variable into a boolean. You type bool, set of parentheses, add your value or variable. I'll place age, within the set of parentheses. Then let's print whatever age is.
+好的，最后，我们来演示如何将一个值或者变量转成一个布尔值。所以一个布尔值只能是True或者False两者之一。那么，我们可以把一个数值转成一个布尔值吗？我们来试一下。我们来转这个`age`，`age`等于，通过关键字`bool`，添加一对括号，将原`age`放在括号中。然后再打印输出转型后的`age`。
 
 ```py
 age = bool(age)
 print(age)
 ```
 
-Do you think the result is going to be true or false? [Run]. Um, it's actually True. When converting a number to a boolean, if that number is anything but zero, it will always be true. Let's say age is like a million, well`age = 10000`, [Run], well, it's still going to be true. What about negative 1 million`age = -10000`? that is still True. But if age were zero`age = 0`, then it's false[5:31].
+你觉得结果会是True还是False？运行。结果是`True`。当我们将一个数值转成一个布尔值时，只要这个数值不是零，那么转成布尔值的结果总是True。假设我把`age`改成1万，运行，结果显示为`True`。如果改成负1万呢？结果还是`True`。但是如果我把`age`改成零，结果就是`False`。
 
-Why would casting something as a Boolean be useful? Let's say we ask a user to enther in their name, I need to check to see if they enthered in something. Let's type cast my name as a Boolean.
+将值转成布尔有啥用处呢？假设我们让用户输入他们的姓名，我们需要检查用户是否真正输入了一些字符，所以我们可以将用户的输入转型成布尔。
 
 ```py
 name = bool(name)
 print(name)
 ```
 
-That is true, but if this was an empty string(`name = ""`), that would be false. Even a space registers as true(`name = " "`). Like I said, we could use typecasting to check to see if somebody typed in their name or not. If we cast the name as a Boolean, and it's true that means they typed in something. We'll have more practice with that later.
+结果显示`True`。但是如果用户没有输入（直接按了回车），相当于name是空字符串（`name = ""`）。结果就会显示`False`。即便name是一个空格(`name = " "`)，它也会被转成`True`。也就是说，通过转型，我们可以检查用户是否输入了姓名。如果我们将`name`转成一个布尔，结果为`True`就是表示用户有输入。关于这块，后续课程我们还会进一步掩饰。
 
-That is explicit typecasting. All explicit typecasting is manually converting a value or variable into a different data type, by using one of these cast keywords. We only covered four: strings, integers, floats and booleans. [Clear_all_code]
+这就演示了类型转型。对于显式转型，它们都是通过手动方式转的，通过使用类型转型关键字，将一个类型的值或者变量，转成一个不同的类型。这边我们演示了字符串，整数，浮点数和布尔四种类型的转型。[clear_all_code]
 
-## Implicit typecasting
+## 隐式类型转型
 
-All right, now let's go over implicit typecasting. Implicit typecasting is when a value or variable is converted into a different data type automatically. For example, let's say we have x, x = 2. Then we have y, y equals, how about 2.0. What if I were to reassign x and set x equal to x divided by y. Well, we're dividing an integer by a float. So what's the result going to be? Is x going to be an integer or a float? So let's print whatever x is.
+好，现在我们继续演示隐式转型。隐式转型表示将一个值或者变量自动转成一个不同的类型。比方说，假设我们有一个变量`x`，`x = 5`。然后我们有一个变量`y`，`y = 5.0`。现在我们对`x`进行重新赋值，`x = x / y`。也就是用一个整数去除以一个浮点数。那么结果是多少呢？结果是整数还是一个浮点数呢？我们把`x`的值输出出来看一下。
 
 ```py
-x = 2
-y = 2.0
+x = 5
+y = 5.0
 
 x = x / y
 
 print(x)
 ```
 
-[Run], result is `1.0`. x is now a float even though we assigned it to be an integer originally, a whole number. So that's implicit typecasting. A variable's data type, can be converted when you perform certain operations on it. Such as arithmetic expressions like this(`x = x / y`).
+运行，结果显示`1.0`。即便在重新赋值之前，`x`是一个整数，现在它变成了一个浮点数。所以，这就是隐式类型转换。一个变量的类型，可以在你对它进行某些操作时自动转换。比方说类似`x = x / y`这样的算数表达式。
 
-All right everybody, so that is typecasting. It's the process of converting a value of one data type to another, you can convert strings to integers, integers to floats, floats to booleans, booleans to strings, any combination of those. And there's still more data types we didn't cover. But that's the general idea.
+好，这就是Python中关于类型转型的相关内容。转型表示将一个数据类型的值转换成另外一个数据类型的过程。我们可以将字符串转成整数，整数转成浮点数，浮点数转成布尔值，布尔值转成字符串，还有其它各种组合。当然，还有一些Python类型我们还没有覆盖到，但是做法是类似的。
 
-So that is typecasting. Hey, if you found this video helpful, please be sure to smash that like button. Leave a random comment down below and subscribe if you'd like to become a fellow bro.
+感谢观看，如果你觉得这节课对你有帮助，别忘了点赞，并且订阅波波微课频道！我们下次课再见！
+
+

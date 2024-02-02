@@ -72,9 +72,9 @@ print(f"你好 {name}")
 print(f"你的年龄是{age}岁")
 ```
 
-So `Bro`, `21`, there we go, that also works. If we were to type cast our input as a float[3:05]
+我输入“波波”，"28"，结果能正常工作。如果我把用户输入转型成一个浮点数。
 
-我输入“波波”，"28"，结果能正常工作。如果我把用户输入转型成一个浮点数。well then my input would be a floating point number. It has that decimal portion.
+well then my input would be a floating point number. It has that decimal portion.
 
 So, when you accept user input, it's always of the string data type. If you are going to use your input with any sort of math, you'll probably want to typecast it as either a float or an integer. And that's how to accept user input. Let's go over a few exercises.
 
