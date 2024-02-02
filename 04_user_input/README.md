@@ -1,4 +1,4 @@
-欢迎回来，今天我们学习如何获取用户输入，然后我们会做一些相关的练习。练习有三个，一个是 Mad Libs，一个计算正方形面积，还有一个购物车程序。
+欢迎回来，今天我们学习如何获取用户输入，然后我们会做一些相关的练习。练习有三个，一个是 Mad Libs，一个计算矩形的面积，还有一个购物车程序。
 
 三个练习:
 
@@ -72,39 +72,39 @@ print(f"你好 {name}")
 print(f"你的年龄是{age}岁")
 ```
 
-我输入“波波”，"28"，结果能正常工作。如果我把用户输入转型成一个浮点数。
+我输入“波波”，"28"，结果能正常工作。
 
-well then my input would be a floating point number. It has that decimal portion.
+所以，当你获取用户输入的时候，你所获取到的总是字符串类型。如果你想把用户输入用作数学运算，那么你通常需要先把它转型成浮点数或者整数。以上就是如何获取用户输入的相关内容。下面我们来做一些练习题，巩固所学内容。
 
-So, when you accept user input, it's always of the string data type. If you are going to use your input with any sort of math, you'll probably want to typecast it as either a float or an integer. And that's how to accept user input. Let's go over a few exercises.
+## 1. Mad Libs 游戏
 
-## 1. mad libs
+第一个练习是`Mad Libs`游戏。在编程中，"Mad Libs" 程序通常指的是一个简单的程序，它会提示用户输入一系列词语，然后将这些词语插入到一个预设的故事模板中，生成一个新的、有趣的故事。这是一个非常适合初学者的项目，因为它可以帮助我们熟悉字符串操作和用户输入。
 
-The first we'll create a Mad Libs game. [Clearl_all]. All right everybody, for our first practice program, we're going to create a Mad Libs game. Mad Libs is where you have a story but the user gets to submit nouns, verbs and adjectives within your story. So let's think of a story, feel free to come up with your own, I'll use f strings. print, today I went to a, we'll insert an adjective here, an adjective is a quality of a thing, zoo. So what kind of zoo, an expensive Zoo, a cheap Zoo, a dirty Zoo, a clean Zoo, that's an adjective, it's a quality of a noun.
-
-```py
-print(f"Today I went to a {adjective} zoo.")
-```
-
-Our second line, let's say is, in an exhibit, I saw, then a noun, a noun is a person placer thing.
+所以我们来设计一个故事，我使用 f 字符串。print, 今天我去了一个{adjective}动物园，`adjective`形容词用来形容事物的一种特性。这是怎样的一个动物园呢？一个高档的动物园，一个普通的动物园，一个脏兮兮的动物园，一个干净的动物园，这些就是形容词，它用来对名词进行形容。
 
 ```py
-print(f"In an exhibit, I saw {noun}")
+print(f"今天我去了一个{adjective}动物园。")
 ```
 
-Our noun was, then an adjective, and a verb. A verb is an action, I would like two different adjectives. Let's rename this first adjective as adjective one, the second adjective will be adjective two. After our verb, I'll add ing that means that this verb is current tense. It's currently happening.
+第二行，比方说，在一个展览中，我看到了{noun}，`noun`名次表示人，地点或事物。
 
 ```py
-print(f"{noun} was {adjective2} and {verb}ing)
+print(f"在一个展厅前，我看到了{noun}")
 ```
 
-print, this will be an f string, I was, then let's add a third adjective, adjective three. We just need to declare and assign these variables.
+`{adjective}{noun}正在{verb}`。一个 verb 表示一个动作。看起来我需要两个形容词。我们将第一个形容词重命名为`adjective1`，第二个形容词重命名为`adjective2`。在动词`verb`前，我们加`正在`，表示当时正在进行时。
 
 ```py
-print(f"I was {adjective3}")
+print(f"{adjective2}{noun}正在{verb}")
 ```
 
-We hav adjective1, our noun, adjective2, our verb, then adjective3.
+再 print，我觉得太{adjective3}了，这边添加了第三个形容词。
+
+```py
+print(f"我觉得太{adjective3}了")
+```
+
+所以我们需要声明并给这些变量赋值。我们需要声明`adjective1`，`noun`，`adjective2`，`verb`，然后是`adjective3`。
 
 ```py
 adjective1 =
@@ -114,28 +114,30 @@ verb =
 adjective3 =
 ```
 
-We'll accept user input, input will ask the user to enter an adjective. Let's copy this line, add that to adjective2, and adjective3. For noun, we'll input, Enter a noun. Our verb will be, Enter a verb.
+我们要获取用户输入，input，请输入一个形容词。我们拷贝这一行，分别添加`adjective2`和`adjective3`。对于`noun`，input，请输入一个名词。对于`verb`，请输入一个动词。
 
 ```py
-adjective1 = input("Enter an adjective: ")
-noun = input("Enter a noun: ")
-adjective2 = input("Enter an adjective: ")
-verb = input("Enter a verb: ")
-adjective3 = input("Enter an adjective: ")
+adjective1 = input("请输入一个形容词: ")
+noun = input("请输入一个名词: ")
+adjective2 = input("请输入一个形容词: ")
+verb = input("请输入一个动词: ")
+adjective3 = input("请输入一个形容词: ")
 ```
 
-All right, we're ready to run our Mad Libs game. [Run]. An adjective describes a quality of a person place or thing, like fast, slow, uh, what about suspicious? or I'll just say sus for short. Enter a noun, Mark Zuckerberg, a noun is a person Placer thing. Enter an adjective, berserk. Enter a verb, a verb is an action, how about screech? Enter an adjective, amazed. All right, here's our story.
+好，现在我们可以运行 Mad Libs 游戏了。[运行]。形容词描述一个人，地点或者事物的特性，比方说快，慢，这边我输入`神奇的`。输入一个名词，`马云`，名词就是一个人，地点或者事物。再输入一个形容词，`兴高采烈的`。再输入一个动词，动词表示正在做某个动作，比方说我输入`尖叫`。最后再输入一个形容词，`不可思议`。好，这就是我们创作的故事情节。
 
 ```py
-Today I want to a sus zoo.
-In an exhibit, I saw Mark Zuckerburg.
-Mark Zuckerburg was bersert and screeching
-I was amazed
+今天我去了一个神奇的动物园。
+在一个展厅前，我看到了马云。
+兴高采烈的马云正在尖叫。
+我觉得太不可思议了。
 ```
 
-All right, that is our first exercises. I'd like to see what you wrote, post your results in the comment section down below, because I would like to read it. [Clear_all]
+好，这就是我们的第一个练习。如果你创作了一个好玩的故事情节，记得贴在视频下方的评论区。
 
-## 2 area calc
+[Clear_all]
+
+## 2 计算矩形面积
 
 All right, let's move on to the second exercise. For this next exercise, we will calculate the area of a rectangle. We'll need two variables, length and width. We'll take length equal to accept some user input, Enter the length of a rectangle. Then we'll need th width. width, Enter the width of a rectangle. We will take our area variable, set this equal to length times width, then let's display whatever the area is. The area is, colon space, I'll insert our area variable, depending on the unit of measurement, you can set this two inches, centimeters or something else. I'll just say centimeters. I believe that centimeters squared technically. Okay, let's try it.
 
