@@ -1,10 +1,9 @@
-欢迎回来，今天我们学习如何获取用户输入，然后我们会做一些相关的练习。练习有三个，一个是 Mad Libs，一个计算矩形的面积，还有一个购物车程序。
+欢迎回来，今天我们学习如何获取用户输入，然后我们会做一些相关的练习。练习有两个，一个计算矩形的面积，还有一个购物车程序。
 
-三个练习:
+两个练习:
 
-- 练习一, mad libs
-- 练习二, 面积计算
-- 练习三, 购物车
+- 练习一, 面积计算
+- 练习二, 购物车
 
 那么我们该如何接收用户输入呢？其实，我们是通过控制台窗口输入的，当然输出也是在控制台窗口。为了接受用户输入，我们要使用`input`函数。在这对括号中，我们可以给一个输入提示。比方说，我们要求用户输入名字，请输入你的名字。
 
@@ -74,169 +73,99 @@ print(f"你的年龄是{age}岁")
 
 我输入“波波”，"28"，结果能正常工作。
 
-所以，当你获取用户输入的时候，你所获取到的总是字符串类型。如果你想把用户输入用作数学运算，那么你通常需要先把它转型成浮点数或者整数。以上就是如何获取用户输入的相关内容。下面我们来做一些练习题，巩固所学内容。
+所以，当你获取用户输入的时候，你所获取到的总是字符串类型。如果你想把用户输入用作数学运算，那么你通常需要先把它转型成浮点数或者整数。以上就是如何获取用户输入的相关内容。下面我们来做两个练习题，巩固所学内容。
 
-## 1. Mad Libs 游戏
+## 1 计算矩形面积
 
-第一个练习是`Mad Libs`游戏。在编程中，"Mad Libs" 程序通常指的是一个简单的程序，它会提示用户输入一系列词语，然后将这些词语插入到一个预设的故事模板中，生成一个新的、有趣的故事。这是一个非常适合初学者的项目，因为它可以帮助我们熟悉字符串操作和用户输入。
-
-所以我们来设计一个故事，我使用 f 字符串。print, 今天我去了一个{adjective}动物园，`adjective`形容词用来形容事物的一种特性。这是怎样的一个动物园呢？一个高档的动物园，一个普通的动物园，一个脏兮兮的动物园，一个干净的动物园，这些就是形容词，它用来对名词进行形容。
+好的，下面我们继续第二个练习。对于这个练习，我们要来计算矩形的面积。我们需要两个变量，lenth 表示矩形的长度，请输入矩形的长度；width 表示矩形的宽度，请输入矩形的宽度。我们添加一个`area`变量，它等于长度乘以宽度。然后我们将面积打印输出出来。矩形的面积是，冒号，这边插入`area`变量。假设我输入的长宽是以厘米为单位的，那么这边可以写平方厘米。运行。
 
 ```py
-print(f"今天我去了一个{adjective}动物园。")
-```
-
-第二行，比方说，在一个展览中，我看到了{noun}，`noun`名次表示人，地点或事物。
-
-```py
-print(f"在一个展厅前，我看到了{noun}")
-```
-
-`{adjective}{noun}正在{verb}`。一个 verb 表示一个动作。看起来我需要两个形容词。我们将第一个形容词重命名为`adjective1`，第二个形容词重命名为`adjective2`。在动词`verb`前，我们加`正在`，表示当时正在进行时。
-
-```py
-print(f"{adjective2}{noun}正在{verb}")
-```
-
-再 print，我觉得太{adjective3}了，这边添加了第三个形容词。
-
-```py
-print(f"我觉得太{adjective3}了")
-```
-
-所以我们需要声明并给这些变量赋值。我们需要声明`adjective1`，`noun`，`adjective2`，`verb`，然后是`adjective3`。
-
-```py
-adjective1 =
-noun =
-adjective2 =
-verb =
-adjective3 =
-```
-
-我们要获取用户输入，input，请输入一个形容词。我们拷贝这一行，分别添加`adjective2`和`adjective3`。对于`noun`，input，请输入一个名词。对于`verb`，请输入一个动词。
-
-```py
-adjective1 = input("请输入一个形容词: ")
-noun = input("请输入一个名词: ")
-adjective2 = input("请输入一个形容词: ")
-verb = input("请输入一个动词: ")
-adjective3 = input("请输入一个形容词: ")
-```
-
-好，现在我们可以运行 Mad Libs 游戏了。[运行]。形容词描述一个人，地点或者事物的特性，比方说快，慢，这边我输入`神奇的`。输入一个名词，`马云`，名词就是一个人，地点或者事物。再输入一个形容词，`兴高采烈的`。再输入一个动词，动词表示正在做某个动作，比方说我输入`尖叫`。最后再输入一个形容词，`不可思议`。好，这就是我们创作的故事情节。
-
-```py
-今天我去了一个神奇的动物园。
-在一个展厅前，我看到了马云。
-兴高采烈的马云正在尖叫。
-我觉得太不可思议了。
-```
-
-好，这就是我们的第一个练习。如果你创作了一个好玩的故事情节，记得贴在视频下方的评论区。
-
-[Clear_all]
-
-## 2 计算矩形面积
-
-All right, let's move on to the second exercise. For this next exercise, we will calculate the area of a rectangle. We'll need two variables, length and width. We'll take length equal to accept some user input, Enter the length of a rectangle. Then we'll need th width. width, Enter the width of a rectangle. We will take our area variable, set this equal to length times width, then let's display whatever the area is. The area is, colon space, I'll insert our area variable, depending on the unit of measurement, you can set this two inches, centimeters or something else. I'll just say centimeters. I believe that centimeters squared technically. Okay, let's try it.
-
-```py
-length = input("Enter the length of a rectangle: ")
-width = input("Enter the width of a rectangle: ")
+length = input("请输入矩形的长度: ")
+width = input("请输入矩形的宽度: ")
 
 area = length * width
 
-print(f"The area is: {area}cm^2")
+print(f"矩形的面积是:{area}平方厘米")
 ```
 
-The length will be 9, the width is 15. We have a problem, type error, `can't multiply sequence by non-int of type 'str'. What we're missing here is we need to typecast our user input as either a floating point number or an integer. We're using these variables in arithmetic equations. So let's typecast our length and our width as a floating point number. Let's try this again.
+我输入长度是 4，宽度是 3。结果运行出错，类型错误，`can't multiply sequence by non-int of type 'str'`。这边，我们需要将用户的输入转成浮点数或者整数，因为我们要做算术运算。所以，我们来将 length/width 转成浮点数。
 
 ```py
-length = float(input("Enter the length of a rectangle: "))
-width = float(input("Enter the width of a rectangle: "))
+length = float(input("请输入矩形的长度: "))
+width = float(input("请输入矩形的宽度: "))
 
 area = length * width
 
-print(f"The area is: {area}cm^2")
+print(f"矩形的面积是:{area}平方厘米")
 ```
+
+再次运行，输入 4/3，结果是 12.0 平方厘米。
 
 ```sh
-Enter the length of a rectangle: 9,
-Enter the width of a rectangle: 15,
-The area is: 135.0cm^2
+请输入矩形的长度: 4,
+请输入矩形的宽度: 3,
+矩形的面积是:12.0平方厘米
 ```
 
-Hey, if this were a 3D rectangle, we could add height, height equals, I'm going to copy all this, enter the height of a rectangle. Volume equals length times width, times height. The volume is our volume centimeters cubed technically. [Run].
+如果这是一个长方体，我们可以增加一个高度。height 等于，我拷贝上面的代码，调整提示为：请输入矩形的高度。注意，矩形要调整为长方体。
 
 ```py
-length = float(input("Enter the length of a rectangle: "))
-width = float(input("Enter the width of a rectangle: "))
-height = float(int("Enter the height of a rectangle: "))
+length = float(input("请输入长方体的长度: "))
+width = float(input("请输入长方体的宽度: "))
+height = float(int("请输入长方体的高度: "))
 
 volume = length * width * height
 
-print(f"The area is: {volume}cm^3")
+print(f"长方体的体积是{volume}立方厘米")
 ```
 
-9, 15, 7, I'm just making up numbers here. The volume is 945.0 centimeters cubed.
+运行。3，4，5，我随便输入一些数据。结果体积是 60.0 立方厘米。
 
-All right, that is the second exercise. We have calculated, well, I guess both the area of a rectangle, and the volume of a three-dimensional rectangle.
+好的，这就是第二个练习。我们计算了矩形面积和长方体的体积。
 
-## 3 shopping cart
+## 2 购物车
 
-Okay, we have one more exercise. A shopping cart program. We have 3 variables, item, a price of the item, then a quanity.
+好的，最后一个练习，一个购物车总价计算程序。我们需要三个变量，商品 item，商品的价格 price，然后是数量 quantity。
 
 ```py
 item =
 price =
-quanity =
+quantity =
 ```
 
-We'll ask the user what item they're buying. input, what item would you like to buy? Then a price, input, What is the price? Then a quantity, input, how many would you like? If we're working with a string, we don't need to do any type casting.
+我们问用户你买的是什么商品。input，你买的是什么商品？然后 price，input，商品的单价是多少？然后是 quantity，input，你买了多少个？
 
 ```py
-item = input("What item would you like to buy?: ")
-price = float(input("What is the price?: "))
-quanity = input("How many would you like?: ")
+item = input("你买的是什么商品?: ")
+price = float(input("单价是多少?: "))
+quantity = input("你买了多少个?: ")
 ```
 
-a price, with a price that could include a decimal, we should type cast our input as a floating point number. I'll surround our input with a type cast to a float. And with a quantity those are typically integers, they're whole numbers, I'll type cast our input as an integer.
+对于商品名称，它本身就是字符串，并不需要转型。但是对于价格，它可以包含小数部分，所以我们要将输入转成一个浮点数。我把 input 用一个 float 转型函数包起来。对于数量，通常是整数，所以我使用 int 转型成整数。
 
 ```py
-item = input("What item would you like to buy?: ")
-price = float(input("What is the price?: "))
-quanity = int(input("How many would you like?: "))
+item = input("你买的是什么商品?: ")
+price = float(input("单价是多少?: "))
+quantity = int(input("你买了多少个?: "))
 ```
 
-So surround our input with an int cast. Then we can do some calculations. total, equals, our price multiplied by our quantity. Then we'll display a message to the user. print, we'll use an f string, You have bought, our quantity variable, times, whatever the item is that we're trying to buy. Then I'll add slash s, because they might buy more than 1 items. Then we'll display the total. Your total is colon space, then our total. I should probably precede the total with some currency, maybe a dollar sign.
+然后我们要做些计算，total = price x quantity。然后我们给用户展示输出。print，使用 f 字符串，你购买了{quantity}个{item}。然后展示总价，总价是: {total}元。假设我使用的是人民币。
 
 ```py
-item = input("What item would you like to buy?: ")
-price = float(input("What is the price?: "))
-quanity = int(input("How many would you like?: "))
+item = input("你买的是什么商品?: ")
+price = float(input("单价是多少?: "))
+quantity = int(input("你买了多少个?: "))
 
-total = price * quanity
+total = price * quantity
 
-print(f"You have bought {quantity} x {item}/s")
-print(f"Your total is: ${total}")
+print(f"你购买了{quantity}个{item}")
+print(f"总价是: {total}元")
 ```
 
-Okay, let's run this program. What item would you like to buy? I would like to buy a pizza. What's the price? Maybe a pizza is 4.99. How many would like to buy, I would like to buy nine 9 pizzas.
+好，我们来运行程序。你买的是什么商品？我买的是苹果，单价是多少？3.5 一个。你买了多少个？我买了 10 个。
 
-All right, here is the total 44.91, we can truncate everything up to two decimal places, and here's how. There is a built-in round function, I'm going to surround our total within a round function. Then after our variable, I'll add comma, then the amount of decimal places to round to. Let's try this again.
+结果显示总价是 35.0 元。
 
-```py
-item = input("What item would you like to buy?: ")
-price = float(input("What is the price?: "))
-quanity = int(input("How many would you like?: "))
+好，这就是第三个练习，我们编写了一个购物车总价计算程序。
 
-total = price * quanity
-
-print(f"You have bought {quantity} x {item}/s")
-print(f"Your total is: ${round(total, 2)}")
-```
-
-Let's try this again. What item would like to buy? a pizza. the price is 4.99. How many would like to buy? I'd like nine pizzas, your total is 44.91. Like I said, to truncate everything after two decimal places, you could use the built-in round function, then set teh amount of decimal places you would like to round to.
-
-All right everybody, that is the third exercise, we have made a small shopping cart program.
+感谢观看，如果你觉得这节课对你有帮助，别忘了点赞，并且订阅波波微课频道！我们下次课再见！
