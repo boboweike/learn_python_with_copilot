@@ -1,14 +1,11 @@
 # 课程介绍和环境安装
 
-## 1. 为社么要学习 Python?
+## 1. 为社么要学习 Python?[Ask_Copilot]
 
-[Ask_Copilot]
+## 2. 如何安装 Python 和 PyCharm IDE? [Ask_Copilot]
 
-## 2. 如何安装 Python 和 PyCharm IDE?
-
-[Ask_Copilot]
-
-### 2.1 如何在 PyCharm 中启用 Github Copilot?
+- 2.1 Github 账号申请启用 Copilot?
+- 2.2 在 PyCharm 中启用 Github Copilot?
 
 ## 3. 新建一个 PyCharm 项目
 
