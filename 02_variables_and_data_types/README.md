@@ -18,7 +18,7 @@
 
 ```py
 # 定义一个整型变量players = 3
-# 输出"有个{players}个玩家在线"
+# 输出"有{players}个玩家在线"
 
 # 定义一个整型变量quantity = 10
 # 输出"你购买了{quantity}个商品"
@@ -40,7 +40,7 @@
 # 定义一个字符串变量food = 酸菜鱼
 # 输出"你喜欢吃{food}"
 
-# 定义一个字符串变量email = bobo@boboweike.cn
+# 定义一个字符串变量email = "bobo@boboweike.cn"
 # 输出"你的电子邮件地址是: {email}"
 ```
 
