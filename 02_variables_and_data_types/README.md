@@ -2,7 +2,7 @@
 
 ## 1. 在 Python 中，什么是变量？请举例说明[ask_copilot]
 
-## 2. 在 Python 中，如何实现字符串和变量和拼接输出？[ask_copilot]
+## 2. 在 Python 中，如何实现字符串和变量拼接输出？[ask_copilot]
 
 ## 3. 变量示例[copilot_auto_code]
 
