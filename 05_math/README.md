@@ -14,7 +14,7 @@ x %= 2
 print(x)
 ```
 
-## 问题 2: 在 Python 中，给出下列函数的说明和示例：abs, pow, max, min[ask_copilot]
+## 问题 2: 在 Python 中，给出下列函数的说明和示例：round, abs, pow, max, min[ask_copilot]
 
 ## 问题 3: 在 Python 中，如何访问圆周率 pi？如何访问自然对数的底数 e？[ask_copilot]
 
