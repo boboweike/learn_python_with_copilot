@@ -1,8 +1,9 @@
 # 常用字符串方法
 
+## 请解释在 Python 中，len()方法的用法[ask_copilot]
+
 ## 请解释在 Python 中，字符串方法{m}的用法[ask_copilot]
 
-- len()
 - find()
 - rfind()
 - capitalize()
